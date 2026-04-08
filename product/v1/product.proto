@@ -1,9 +1,10 @@
 syntax = "proto3";
 
-package product.v1;
+package thesis.product.v1;
 
-option java_package = "com.thesis.product.v1";
+option java_package = "com.alex.thesis.proto.product.v1";
 option java_multiple_files = true;
+option java_outer_classname = "ProductProto";
 option csharp_namespace = "Thesis.Product.V1";
 
 /// ProductService provides RPC methods for managing and retrieving product information.

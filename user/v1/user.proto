@@ -1,8 +1,12 @@
 syntax = "proto3";
 
+package thesis.users.v1;
+
+option java_package = "com.alex.thesis.proto.user.v1";
+option java_multiple_files = true;
+option java_outer_classname = "UserProto";
 option csharp_namespace = "UserService.Grpc";
 
-package users.v1;
 
 // Represents the User service, responsible for user management and profiles
 service UserService{

@@ -1,7 +1,9 @@
 syntax = "proto3";
 
+package thesis.order.v1;
+
+option java_package = "com.alex.thesis.proto.order.v1";
 option java_multiple_files = true;
-option java_package = "com.alex.thesis.orderService.grpc";
 option java_outer_classname = "OrderProto";
 
 // Microservice responsible for order processing
