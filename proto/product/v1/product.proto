@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package product.v1;
+
+option java_package = "com.thesis.product.v1";
+option java_multiple_files = true;
+option csharp_namespace = "Thesis.Product.V1";
+
+/// ProductService provides RPC methods for managing and retrieving product information.
+/// It serves as the primary interface for product-related operations in the system.
+service ProductService {
+    // Retrieve a product by it's id
+    rpc GetProductById (GetProductByIdRequest) returns (GetProductByIdResponse);
+    // List all products
+    rpc ListProducts (ListProductsRequest) returns (ListProductsResponse);
+    // Check availability of a product
+    rpc CheckAvailability (CheckAvailabilityRequest) returns (CheckAvailabilityResponse);
+}
+
+message GetProductByIdRequest {
+    string product_id = 1;
+}
+
+message GetProductByIdResponse {
+    Product product = 1;
+}
+
+message ListProductsRequest {
+}
+
+message Product {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    double price = 4;
+    int32 stock = 5;
+    string currency = 6;
+}
+
+message ListProductsResponse {
+    repeated Product products = 1;
+}
+
+message CheckAvailabilityRequest {
+    string product_id = 1;
+    int32 requested_quantity = 2;
+}
+
+message CheckAvailabilityResponse {
+    string product_id = 1;
+    bool is_available = 2;
+    int32 available_quantity = 3;
+}
+
+
+
